@@ -8,14 +8,14 @@ var Todoitem = React.createClass({
     var comments = this.props.comments;
     comments = comments.map(function(item,index){
       return(
-        <li>{item}</li>
+        <li>{item}<hr/></li>
       );
     }.bind(this));
     return(
       <li>
         <div className = 'todo-item'>
           <span className = 'item-name'>
-            {this.props.item}
+            <h3>{this.props.item}</h3>
           </span>
           <p>{this.props.author}</p>
           <br/>

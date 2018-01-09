@@ -11,7 +11,7 @@ var Link = require('react-router').Link;
 
 
 
-//require('./css/index.css');
+require('./css/index.css');
 //module require
 var Todoitem = require('./todoItem');
 var AddItem = require('./addItem');
@@ -43,27 +43,13 @@ var TodoComponent = React.createClass({
   },//getInitialState
 
   axios: function(){
-    // var exact = this;
-    // axios.get('https://www.getpostman.com/collections/1432038e84b14bc0e7fb')
-    // .then(function (response) {
-    //   console.log(response);
-    //   for (var j = 0; j < response.requests.length; j++) {
-    //     exact.fetchThingy(response.requests[j].url)
-    //     }
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
     var exact = this;
-    axios.get('http://assignment-server.herokuapp.com/posts/1?_embed=comments')
+    axios.get('https://www.getpostman.com/collections/1432038e84b14bc0e7fb')
     .then(function (response) {
-        console.log(response);
-        var comments = [];
-        for(var i = 0; i < response.data.comments.length; i++){
-          comments.push(response.data.comments[i].body);
+      console.log(response);
+      for (var j = 0; j < response.requests.length; j++) {
+        exact.fetchThingy(response.requests[j].url)
         }
-        exact.onAdd({'author':response.data.author, 'title':response.data.title, 'comments':comments});
-//        console.log(exact.state.todo[0].author);
     })
     .catch(function (error) {
       console.log(error);

@@ -1,14 +1,14 @@
 var React = require('react');
 
-//require('./css/additem.css');
+require('./css/additem.css');
 
 var AddItem = React.createClass({
 
   render: function(){
     return(
       <form id= 'add-todo' onSubmit={this.handleSubmit}>
-        <input type = 'text' required ref = 'newItem' />
-        <input type = 'text' required ref = 'newItem_Author'/>
+        <input type = 'text' required ref = 'newItem' placeholder = 'Title'/>
+        <input type = 'text' required ref = 'newItem_Author' placeholder='Author'/>
         <input type = 'submit' value = 'Add' />
       </form>
     );
